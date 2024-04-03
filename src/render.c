@@ -1,6 +1,6 @@
 #include "fractol.h"
 
-double rescale(double unscaledNum, double minAllowed,  double maxAllowed, double min, double max)
+double __rescale(double unscaledNum, double minAllowed,  double maxAllowed, double min, double max)
 {
 	return (maxAllowed - minAllowed) * (unscaledNum - min) / (max - min) + minAllowed;
 }
@@ -32,8 +32,8 @@ void render(int x, int y, t_fractal * fractal)
 
 	int i = 0;
 
-	z.real = rescale(x, -2, 2, 0, WIDTH * fractal->zoom) + fractal->shift_x;
-	z.i = rescale(y, 2, -2, 0, HEIGHT * fractal->zoom) + fractal->shift_y;
+	z.real = __rescale(x, -2, 2, 0, WIDTH * fractal->zoom) + fractal->shift_x;
+	z.i = __rescale(y, 2, -2, 0, HEIGHT * fractal->zoom) + fractal->shift_y;
 
 	constant_init(&z, &c, fractal);
 
@@ -43,7 +43,7 @@ void render(int x, int y, t_fractal * fractal)
 
 		if (out_of_range(z))
 		{
-			color = rescale(i, BLACK, WHITE, 0, fractal->resolution);
+			color = __rescale(i, BLACK, WHITE, 0, fractal->resolution);
 			handle_pixel(x, y, &fractal->img, color);
 			return;
 		}

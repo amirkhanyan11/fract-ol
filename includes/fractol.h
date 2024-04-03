@@ -91,4 +91,8 @@ typedef struct s_fractal
 
 
 
+double __rescale(double unscaledNum, double minAllowed,  double maxAllowed, double min, double max);
+
+
+
 #endif // _FRACTOL_H_

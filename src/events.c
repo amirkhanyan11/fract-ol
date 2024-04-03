@@ -65,10 +65,9 @@ int mouse_handle(int button, int x, int y, t_fractal *fractal)
 
 int julia_handle(int x, int y, t_fractal * fractal)
 {
-	// fractal->julia.real = (rescale(x, -2, 2, 0, WIDTH) * fractal->zoom) + fractal->shift_x;
-	// fractal->julia.i = (rescale(y, 2, -2, 0, HEIGHT));
-	// fractal_render(fractal);
-	// printf("x - %d\ny - %d\n", x, y);
+	fractal->julia.real = (__rescale(x, -2, 2, 0, WIDTH) * fractal->zoom) + fractal->shift_x;
+	fractal->julia.i = (__rescale(y, 2, -2, 0, HEIGHT) * fractal->zoom) + fractal->shift_y;
+	fractal_render(fractal);
 	return 0;
 }
 
@@ -79,8 +78,8 @@ void event_handle(t_fractal * fractal)
 	mlx_hook(fractal->connect.win, ON_MOUSEDOWN, DUMMY, mouse_handle, fractal); // mouse
 	mlx_hook(fractal->connect.win, ON_DESTROY, DUMMY, destroy_handle, fractal); // uuuf esim
 
-	// if (!ft_strncmp(fractal->name, "julia", ft_strlen("julia")))
-	// {
-	// 	mlx_hook(fractal->connect.win, ON_MOUSEMOVE, DUMMY, julia_handle, fractal);
-	// }
+	if (!ft_strncmp(fractal->name, "julia", ft_strlen("julia")))
+	{
+		mlx_hook(fractal->connect.win, ON_MOUSEMOVE, DUMMY, julia_handle, fractal);
+	}
 }
