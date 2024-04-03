@@ -11,7 +11,7 @@ PRINTF = $(PRINTFPATH)libftprintf.a
 
 CC = gcc
 DEBUG = -fsanitize=address
-CFLAGS = -Lmlx -lmlx -framework OpenGl -framework Appkit $(foreach H,$(INCPATH),-I$(H)) #$(DEBUG)
+CFLAGS = -Lmlx -lmlx -framework OpenGl -framework Appkit -lm $(foreach H,$(INCPATH),-I$(H)) #$(DEBUG)
 
 all : $(NAME)
 

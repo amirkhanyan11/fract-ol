@@ -13,5 +13,6 @@ typedef struct s_comlpex
 t_complex pow2_complex(t_complex num);
 t_complex sum_complex(t_complex lhv, t_complex rhv);
 int out_of_range(t_complex num);
+double	atodbl(char *s);
 
 #endif // _COMPLEX_H_

@@ -4,14 +4,15 @@
 #include <stdio.h>
 #include  "../mlx/mlx.h"
 #include <stdlib.h>
-// #include <unistd.h>
+#include <unistd.h>
 # include <math.h>
 #include "complex.h"
 
-#define WIDTH	1200
-#define	HEIGHT	1200
-#define RESOLUTION 1337
+#define WIDTH	800
+#define	HEIGHT	800
 #define HYPOTHENUSE 4
+
+#define DUMMY 0
 
 /*
  * COLORS
@@ -69,9 +70,23 @@ typedef struct	s_connect {
 
 typedef struct s_fractal
 {
-	char * name;
+	// technical part
+
 	t_connect connect;
 	t_img img;
+
+	// members
+
+	char const * name;
+	int resolution;
+	int color;
+
+	double shift_x;
+	double shift_y;
+	double zoom;
+
+	t_complex julia;
+
 }	t_fractal;
 
 
