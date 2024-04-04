@@ -9,7 +9,7 @@ SRCS = $(wildcard $(SRCSPATH)*.c)
 OBJS = $(patsubst %.c, %.o, $(SRCS))
 PRINTF = $(PRINTFPATH)libftprintf.a
 
-CC = gcc
+CC = cc
 DEBUG = -fsanitize=address
 CFLAGS = -Lmlx -lmlx -framework OpenGl -framework Appkit -lm $(foreach H,$(INCPATH),-I$(H)) #$(DEBUG)
 

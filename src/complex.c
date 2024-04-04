@@ -1,32 +1,41 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   complex.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aamirkha <aamirkha@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/04 16:42:56 by aamirkha          #+#    #+#             */
+/*   Updated: 2024/04/04 16:42:57 by aamirkha         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fractol.h"
 
-t_complex pow2_complex(t_complex num)
+t_complex	pow2_complex(t_complex num)
 {
-	t_complex res;
+	t_complex	res;
 
 	res.real = (num.real * num.real) - (num.i * num.i);
 	res.i = 2 * (num.real * num.i);
-
-	return res;
+	return (res);
 }
 
-t_complex sum_complex(t_complex lhv, t_complex rhv)
+t_complex	sum_complex(t_complex lhv, t_complex rhv)
 {
-	t_complex res;
+	t_complex	res;
 
 	res.real = lhv.real + rhv.real;
 	res.i = lhv.i + rhv.i;
-
-	return res;
+	return (res);
 }
 
-
-int out_of_range(t_complex num)
+int	out_of_range(t_complex num)
 {
 	return ((num.real * num.real) + (num.i * num.i) > HYPOTHENUSE);
 }
 
-double	atodbl(char *s)
+double	atodouble(char *s)
 {
 	long	integer_part;
 	double	fraction;
