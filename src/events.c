@@ -6,7 +6,7 @@
 /*   By: aamirkha <aamirkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 16:43:04 by aamirkha          #+#    #+#             */
-/*   Updated: 2024/04/04 16:59:52 by aamirkha         ###   ########.fr       */
+/*   Updated: 2024/04/04 17:42:33 by aamirkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ int	destroy_handle(t_fractal *fractal)
 
 int	mouse_handle(int button, int x, int y, t_fractal *fractal)
 {
+	(void)x;
+	(void)y;
 	if (GL_MOUSEWHEELUP == button)
 		fractal->zoom *= 0.7;
 	else if (GL_MOUSEWHEELDOWN == button)

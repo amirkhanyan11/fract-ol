@@ -6,12 +6,12 @@
 /*   By: aamirkha <aamirkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 16:43:17 by aamirkha          #+#    #+#             */
-/*   Updated: 2024/04/04 17:00:06 by aamirkha         ###   ########.fr       */
+/*   Updated: 2024/04/04 17:31:30 by aamirkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _FRACTOL_H_
-# define _FRACTOL_H_
+#ifndef FRACTOL_H
+# define FRACTOL_H
 
 # include "../mlx/mlx.h"
 # include "complex.h"
@@ -55,7 +55,7 @@ typedef struct s_img
 	int			line_len;
 }				t_img;
 
-enum	e_e
+enum			e_e
 {
 	ON_KEYDOWN = 2,
 	ON_KEYUP = 3,
@@ -83,27 +83,18 @@ typedef struct s_connect
 
 typedef struct s_fractal
 {
-	// technical part
-
 	t_connect	connect;
 	t_img		img;
-
-	// members
-
 	char		*name;
 	int			resolution;
 	int			color_main;
 	int			color_compl;
-
 	double		shift_x;
 	double		shift_y;
 	double		zoom;
 	short		mouse_lock;
-
 	t_complex	julia;
-
 }				t_fractal;
-
 
 // init
 void			fractal_init(char *name, t_complex *julia, t_fractal *fractal);
@@ -118,10 +109,10 @@ int				key_handle(int keycode, t_fractal *fractal);
 
 // render
 double			__rescale(double unscaledNum, double minAllowed,
-					double maxAllowed,  double max);
+					double maxAllowed, double max);
 void			handle_pixel(int x, int y, t_img *img, int color);
 void			constant_init(t_complex *z, t_complex *c, t_fractal *fractal);
 void			render(int x, int y, t_fractal *fractal);
 void			fractal_render(t_fractal *fractal);
 
-#endif // _FRACTOL_H_
+#endif // FRACTOL_H

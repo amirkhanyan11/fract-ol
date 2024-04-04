@@ -11,12 +11,13 @@ PRINTF = $(PRINTFPATH)libftprintf.a
 
 CC = cc
 DEBUG = -fsanitize=address
-CFLAGS = -Lmlx -lmlx -framework OpenGl -framework Appkit -lm $(foreach H,$(INCPATH),-I$(H)) #$(DEBUG)
+MLXFLAGS = -Lmlx -lmlx -framework OpenGl -framework Appkit -lm
+CFLAGS = -Wall -Wextra -Werror $(foreach H,$(INCPATH),-I$(H)) #$(DEBUG)
 
 all : $(NAME)
 
 $(NAME) : $(PRINTF) $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) $(PRINTF) -o $@
+	$(CC) $(MLXFLAGS) $(CFLAGS) $(OBJS) $(PRINTF) -o $@
 
 $(PRINTF) :
 	make -C $(PRINTFPATH) all
