@@ -6,7 +6,7 @@
 /*   By: aamirkha <aamirkha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 16:43:17 by aamirkha          #+#    #+#             */
-/*   Updated: 2024/04/04 17:31:30 by aamirkha         ###   ########.fr       */
+/*   Updated: 2025/01/21 20:37:57 by aamirkha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-# define WIDTH 720
-# define HEIGHT 720
+# define WIDTH 800
+# define HEIGHT 800
 # define HYPOTHENUSE 4
 
 # define DUMMY 0
