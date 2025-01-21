@@ -3,6 +3,7 @@
 
 Fractol is a graphical program designed to visualize and explore the mesmerizing world of fractals. This project combines the elegance of mathematical complexity with the power of OpenGL and C programming to create stunning visual representations. ✨
 
+![Fractal](https://github.com/amirkhanyan11/fract-ol/blob/master/img/img1.png)
 ---
 
 ## 🌟 Features  
